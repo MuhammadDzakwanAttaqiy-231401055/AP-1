@@ -1,38 +1,111 @@
 #include <iostream>
+
 using namespace std;
 
-main(){
+int main() {
     int nilai;
-    cout << "Masukkan nilai : "; cin >> nilai;
-    // if (nilai <= 65){
-    //     cout << "Anda tidak lulus" << endl;
-    // } 
 
-    // if (nilai <= 65){
-    //     cout << "Anda tidak lulus" << endl;
-    // }else {
-    //     cout << "anda lulus" <<endl;
-    // }
+    cout << "Masukkan Nilai: ";
+    cin >> nilai;
+
+    // If Statement, mengecek kondisi, bila true akan dikerjakan
+    if (nilai <= 65) {
+        cout << "Anda TIDAK Lulus" << endl;
+    }
 
 
-    // if (nilai == 100){
-    //     cout << "Kamu hebat" << endl;
-    // }else if (nilai <= 65) {
-    //     cout << "anda tidak lulus" <<endl;
-    // }else {
-    //     cout << "anda lulus" << endl;
-    // }
-    // switch (nilai) {
-    //     case 85 ... 100: cout <<"A" << endl; break;
-    //     case 80 ... 84: cout <<"B" << endl; break;
-    //     case 75 ... 79: cout <<"C" << endl; break;
-    //     case 70 ... 74: cout <<"D" << endl; break;
-    //     case 65 ... 69: cout <<"E" << endl; break;
-    //     case 60 ... 64: cout <<"F" << endl; break;
-    //     default: cout << "salah input " << endl;
-        
-    // }
 
-    string cekNum = (nilai % 2 == 0) ? "genap" : "ganjil";
-    cout << cekNum << endl;
+    // If-Else Statement, else -> jika kondisi if tidak memenuhi, maka else akan dikerjakan
+    if (nilai <= 65) {
+        cout << "Anda TIDAK Lulus" << endl;
+    } else {
+        cout << "Anda Lulus" << endl;
+    }
+
+
+
+    // If-Else-If Statement, else if dikerjakan jika tidak memenuhi if, dan memenuhi else if
+    if (nilai == 100) {
+        cout << "Anda Hebat" << endl;
+    } else if (nilai <= 65) {
+        cout << "Anda TIDAK Lulus" << endl;
+    } else {
+        cout << "Anda Lulus" << endl;
+    }
+
+
+
+    // Nested If Statement
+    if (nilai <= 65) {
+        cout << "Anda TIDAK Lulus" << endl;
+    } else {
+        if (nilai == 100) {
+            cout << "Anda Lulus dan Anda Hebat" << endl;
+        } else {
+            cout << "Anda Lulus" << endl;
+        }
+    }
+
+
+    
+    // Switch Case, hanya dapat dipakai pada int dan char
+    switch (nilai) {
+        case 1:
+            cout << "Senin" << endl;
+            break;
+        case 2:
+            cout << "Selasa" << endl;
+            break;
+        case 3:
+            cout << "Rabu" << endl;
+            break;
+        case 4:
+            cout << "Kamis" << endl;
+            break;
+        case 5:
+            cout << "Jumat" << endl;
+            break;
+        case 6:
+            cout << "Sabtu" << endl;
+            break;
+        case 7:
+            cout << "Minggu" << endl;
+            break;
+        default:
+            cout << "Inputan TIDAK VALID" << endl;
+            break;      // Opsional
+    }
+
+
+
+    // Switch Case For Range
+    switch (nilai) {
+        case 85 ... 100:
+            cout << "A" << endl;
+            break;
+        case 80 ... 84:
+            cout << "B+" << endl;
+            break;
+        case 75 ... 79:
+            cout << "B" << endl;
+            break;
+        case 70 ... 74:
+            cout << "C+" << endl;
+            break;
+        case  65 ... 69:
+            cout << "C" << endl;
+            break;
+        case 60 ... 64:
+            cout << "D" << endl;
+            break;
+        default:
+            cout << "E" << endl;
+            break;
+    }
+
+
+
+    // Ternary Operator, memasukkan data ke variabel melalui pengkondisian
+    string checkNum = (nilai % 2 == 0) ? "Genap" : "Ganjil";
+    cout << nilai << " adalah bilangan " << checkNum << endl;
 }
